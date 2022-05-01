@@ -1,0 +1,45 @@
+unit Remote_Desktop;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
+  Vcl.ComCtrls;
+
+type
+  TURemote_Desktop = class(TForm)
+    StatusBar_APP: TStatusBar;
+    Panel1: TPanel;
+    RadioGroup1: TRadioGroup;
+    Btn_Start: TBitBtn;
+    CheckBox_MouseRemote: TCheckBox;
+    CheckBox1: TCheckBox;
+    CheckBox2: TCheckBox;
+    CheckBox3: TCheckBox;
+    CheckBox4: TCheckBox;
+    CheckBox5: TCheckBox;
+    CheckBox6: TCheckBox;
+    CheckBox7: TCheckBox;
+    CheckBox8: TCheckBox;
+    CheckBox9: TCheckBox;
+    CheckBox10: TCheckBox;
+    CheckBox11: TCheckBox;
+    Panel2: TPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  URemote_Desktop: TURemote_Desktop;
+
+implementation
+
+uses
+  Main;
+
+{$R *.dfm}
+
+end.

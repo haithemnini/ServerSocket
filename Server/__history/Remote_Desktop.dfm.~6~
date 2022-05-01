@@ -1,0 +1,278 @@
+object URemote_Desktop: TURemote_Desktop
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Remote Desktop'
+  ClientHeight = 288
+  ClientWidth = 671
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object StatusBar_APP: TStatusBar
+    Left = 0
+    Top = 269
+    Width = 671
+    Height = 19
+    BiDiMode = bdLeftToRight
+    Panels = <
+      item
+        Text = 'Status :'
+        Width = 50
+      end
+      item
+        Text = 'Server is not Activated'
+        Width = 100
+      end>
+    ParentBiDiMode = False
+    ExplicitLeft = -347
+    ExplicitTop = 314
+    ExplicitWidth = 952
+  end
+  object Pnl_Bottom: TPanel
+    Left = 0
+    Top = 236
+    Width = 671
+    Height = 33
+    Align = alBottom
+    BevelOuter = bvNone
+    Caption = 'Pnl_Bottom'
+    ShowCaption = False
+    TabOrder = 1
+    ExplicitLeft = -8
+    ExplicitTop = 230
+    ExplicitWidth = 688
+    DesignSize = (
+      671
+      33)
+    object Btn_OK: TBitBtn
+      Left = 1
+      Top = 2
+      Width = 111
+      Height = 29
+      Anchors = [akLeft, akRight, akBottom]
+      Caption = 'OK'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Calibri'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = Btn_OKClick
+      ExplicitWidth = 128
+    end
+  end
+  object Radio_Remote: TRadioGroup
+    Left = 0
+    Top = 5
+    Width = 671
+    Height = 231
+    Align = alClient
+    Caption = 'Remote Access to this Device :'
+    TabOrder = 2
+    ExplicitTop = -1
+    ExplicitWidth = 688
+    ExplicitHeight = 281
+  end
+  object CheckBox_MouseRemote: TCheckBox
+    Left = 21
+    Top = 39
+    Width = 129
+    Height = 25
+    TabStop = False
+    Caption = 'Open CD-ROM'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+  end
+  object CheckBox1: TCheckBox
+    Left = 453
+    Top = 39
+    Width = 156
+    Height = 25
+    TabStop = False
+    Caption = 'Swap mouse buttons'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 4
+  end
+  object CheckBox2: TCheckBox
+    Left = 231
+    Top = 39
+    Width = 155
+    Height = 25
+    TabStop = False
+    Caption = 'Flicker CL NL SL'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+  end
+  object CheckBox3: TCheckBox
+    Left = 21
+    Top = 87
+    Width = 129
+    Height = 25
+    TabStop = False
+    Caption = 'Close CD-ROM'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
+  end
+  object CheckBox4: TCheckBox
+    Left = 231
+    Top = 87
+    Width = 129
+    Height = 25
+    TabStop = False
+    Caption = 'Off Monitor'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 7
+  end
+  object CheckBox5: TCheckBox
+    Left = 453
+    Top = 87
+    Width = 156
+    Height = 25
+    TabStop = False
+    Caption = 'Back mouse button'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 8
+  end
+  object CheckBox6: TCheckBox
+    Left = 453
+    Top = 136
+    Width = 212
+    Height = 25
+    TabStop = False
+    Caption = '"Windows Must Die" Message'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 9
+  end
+  object CheckBox7: TCheckBox
+    Left = 453
+    Top = 184
+    Width = 148
+    Height = 25
+    TabStop = False
+    Caption = 'Reboot Computer'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 10
+  end
+  object CheckBox8: TCheckBox
+    Left = 231
+    Top = 184
+    Width = 129
+    Height = 25
+    TabStop = False
+    Caption = 'Force Computer Shut Down'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 11
+  end
+  object CheckBox9: TCheckBox
+    Left = 231
+    Top = 136
+    Width = 155
+    Height = 25
+    TabStop = False
+    Caption = 'Turn Off Computer'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 12
+  end
+  object CheckBox10: TCheckBox
+    Left = 21
+    Top = 136
+    Width = 129
+    Height = 25
+    TabStop = False
+    Caption = 'Open CD-ROM'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 13
+  end
+  object CheckBox11: TCheckBox
+    Left = 21
+    Top = 184
+    Width = 129
+    Height = 25
+    TabStop = False
+    Caption = 'Off Monitor'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -15
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 14
+  end
+  object Pnl_Top: TPanel
+    Left = 0
+    Top = 0
+    Width = 671
+    Height = 5
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Panel1'
+    ShowCaption = False
+    TabOrder = 15
+    ExplicitWidth = 688
+  end
+end
