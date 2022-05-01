@@ -4,8 +4,8 @@ object UMain: TUMain
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Client'
-  ClientHeight = 371
-  ClientWidth = 447
+  ClientHeight = 146
+  ClientWidth = 444
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,11 +14,12 @@ object UMain: TUMain
   Font.Style = []
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 23
   object Label1: TLabel
-    Left = 8
-    Top = 8
+    Left = 255
+    Top = 7
     Width = 34
     Height = 19
     Caption = 'Port :'
@@ -30,8 +31,8 @@ object UMain: TUMain
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 7
-    Top = 62
+    Left = 255
+    Top = 63
     Width = 75
     Height = 19
     Caption = 'IP address :'
@@ -43,10 +44,11 @@ object UMain: TUMain
     ParentFont = False
   end
   object Edt_Host: TEdit
-    Left = 7
-    Top = 84
+    Left = 255
+    Top = 85
     Width = 162
     Height = 30
+    TabStop = False
     Alignment = taCenter
     AutoSize = False
     Font.Charset = DEFAULT_CHARSET
@@ -59,87 +61,27 @@ object UMain: TUMain
     TabOrder = 0
     Text = '192.168.1.41'
   end
-  object Mem_Client: TMemo
-    Left = 176
-    Top = 8
-    Width = 257
-    Height = 319
+  object Btn_Start: TBitBtn
+    Left = 8
+    Top = 40
+    Width = 225
+    Height = 68
+    Caption = 'Start Client..'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Tahoma'
+    Font.Height = -16
+    Font.Name = 'Calibri'
     Font.Style = []
     ParentFont = False
     TabOrder = 1
-  end
-  object Btn_Start: TBitBtn
-    Left = 7
-    Top = 136
-    Width = 162
-    Height = 33
-    Caption = 'Start'
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Calibri'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 2
     OnClick = Btn_StartClick
   end
-  object Btn_Stop: TBitBtn
-    Left = 7
-    Top = 175
-    Width = 162
-    Height = 33
-    Caption = 'Stop'
-    Enabled = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Calibri'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 3
-    OnClick = Btn_StopClick
-  end
-  object Btn_Send: TBitBtn
-    Left = 8
-    Top = 333
-    Width = 162
-    Height = 33
-    Caption = 'Send'
-    Enabled = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Calibri'
-    Font.Style = []
-    ParentFont = False
-    TabOrder = 4
-    OnClick = Btn_SendClick
-  end
-  object Edt_Mes: TEdit
-    Left = 176
-    Top = 333
-    Width = 257
-    Height = 33
-    Alignment = taCenter
-    AutoSize = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -16
-    Font.Name = 'Calibri'
-    Font.Style = [fsBold]
-    Font.Quality = fqClearTypeNatural
-    ParentFont = False
-    TabOrder = 5
-  end
   object Edt_Port: TEdit
-    Left = 7
-    Top = 30
+    Left = 255
+    Top = 29
     Width = 162
     Height = 30
+    TabStop = False
     Alignment = taCenter
     AutoSize = False
     Font.Charset = DEFAULT_CHARSET
@@ -149,17 +91,59 @@ object UMain: TUMain
     Font.Style = [fsBold]
     Font.Quality = fqClearTypeNatural
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 2
     Text = '8081'
+  end
+  object StatusBar_APP: TStatusBar
+    Left = 0
+    Top = 127
+    Width = 444
+    Height = 19
+    BiDiMode = bdLeftToRight
+    Panels = <
+      item
+        Text = 'Status :'
+        Width = 50
+      end
+      item
+        Text = 'Client is not Activated'
+        Width = 100
+      end>
+    ParentBiDiMode = False
+    ExplicitTop = 123
+  end
+  object Auto_Reconn_Chek: TCheckBox
+    Left = 11
+    Top = 11
+    Width = 225
+    Height = 23
+    TabStop = False
+    Caption = 'Auto ReConnect '
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Calibri'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 4
   end
   object Client_Sock: TClientSocket
     Active = False
     ClientType = ctNonBlocking
     Port = 0
+    OnConnecting = Client_SockConnecting
     OnConnect = Client_SockConnect
     OnDisconnect = Client_SockDisconnect
     OnRead = Client_SockRead
-    Left = 31
-    Top = 216
+    OnError = Client_SockError
+    Left = 319
+    Top = 53
+  end
+  object TAuto_Reconn: TTimer
+    Enabled = False
+    Interval = 10000
+    OnTimer = TAuto_ReconnTimer
+    Left = 264
+    Top = 48
   end
 end
