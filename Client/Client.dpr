@@ -4,9 +4,7 @@ uses
   Vcl.Forms,
   Main in 'Main.pas' {UMain},
   CMD_Dialect in '..\API\CMD_Dialect.pas';
-
 {$R *.res}
-
 begin
   ReportMemoryLeaksOnShutdown := True;
 
